@@ -1,32 +1,60 @@
 {
   "name": "skanyx-studio",
-  "version": "1.0.0",
-  "description": "My Remotion video",
+  "version": "0.1.0",
+  "description": "Skanyx video studio: short-form vertical videos (Remotion + ElevenLabs + real app recordings)",
   "repository": {},
   "license": "UNLICENSED",
   "engines": {
-    "node": "^20.19.0 || ^22.13.0 || >=24"
+    "node": "^22.13.0 || >=24"
   },
   "private": true,
+  "type": "module",
   "dependencies": {
+    "@remotion/bundler": "4.0.539",
+    "@remotion/captions": "4.0.539",
     "@remotion/cli": "4.0.539",
+    "@remotion/fonts": "4.0.539",
+    "@remotion/layout-utils": "4.0.539",
+    "@remotion/media": "4.0.539",
+    "@remotion/media-utils": "4.0.539",
+    "@remotion/renderer": "4.0.539",
+    "@remotion/transitions": "4.0.539",
+    "@remotion/zod-types": "4.0.539",
+    "geist": "1.8.2",
     "react": "19.2.3",
     "react-dom": "19.2.3",
-    "remotion": "4.0.539"
+    "remotion": "4.0.539",
+    "zod": "4.5.4"
   },
   "devDependencies": {
     "@remotion/eslint-config-flat": "4.0.539",
+    "@types/node": "26.6.5",
     "@types/react": "19.2.7",
     "@types/web": "0.0.166",
+    "dotenv": "18.0.9",
     "eslint": "10.12.0",
     "prettier": "3.8.1",
-    "typescript": "5.9.3"
+    "tsx": "4.23.15",
+    "typescript": "5.9.3",
+    "vitest": "5.0.5"
   },
   "scripts": {
     "dev": "remotion studio",
-    "build": "remotion bundle",
-    "upgrade": "remotion upgrade",
-    "lint": "eslint src && tsc"
+    "lint": "eslint src scripts",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "check": "npm run lint && npm run typecheck && npm run test",
+    "media:setup": "tsx scripts/setup-media.ts",
+    "media:normalise": "tsx scripts/media/normalise.ts",
+    "media:manifest": "tsx scripts/media/manifest.ts",
+    "facts": "tsx scripts/facts.ts",
+    "voice:tts": "tsx scripts/voice/tts.ts",
+    "voice:dictionaries": "tsx scripts/voice/dictionaries.ts",
+    "voice:listen-set": "tsx scripts/voice/listen-set.ts",
+    "audio:mix": "tsx scripts/audio/mix.ts",
+    "render": "tsx scripts/render.ts",
+    "qa": "tsx scripts/qa.ts",
+    "upgrade": "remotion upgrade"
   },
   "allowScripts": {
     "esbuild": false

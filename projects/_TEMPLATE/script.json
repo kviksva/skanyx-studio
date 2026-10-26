@@ -1,0 +1,45 @@
+{
+  "slug": "_TEMPLATE",
+  "locale": "en",
+  "voice": { "modelId": "eleven_v4", "stability": 0.45, "similarityBoost": 0.75 },
+  "lines": [
+    {
+      "id": "l1",
+      "scene": "hook",
+      "display": "That orange light just came on.",
+      "spoken": "That orange light just came on, and your first thought was the worst one.",
+      "tag": "[calm, unhurried]"
+    },
+    {
+      "id": "l2",
+      "scene": "plug",
+      "display": "Plug in a €15 adapter, open Skanyx.",
+      "spoken": "Plug in a fifteen euro adapter, open Skanyx, and thirty seconds later you have an answer."
+    },
+    {
+      "id": "l3",
+      "scene": "meaning",
+      "display": "P0420: the *catalytic converter* is not cleaning the exhaust.",
+      "spoken": "P zero four two zero. The catalytic converter is not cleaning the exhaust the way it should."
+    },
+    {
+      "id": "l4",
+      "scene": "verdict",
+      "display": "Safe to keep driving for now.",
+      "spoken": "Skanyx rates it safe to keep driving for now.",
+      "tag": "[reassuring]"
+    },
+    {
+      "id": "l5",
+      "scene": "cost",
+      "display": "Roughly €300 to €900 at an independent workshop.",
+      "spoken": "The fix is roughly three hundred to nine hundred euros at an independent workshop."
+    },
+    {
+      "id": "l6",
+      "scene": "cta",
+      "display": "Free on iOS and Android.",
+      "spoken": "Skanyx is free on iOS and Android."
+    }
+  ]
+}

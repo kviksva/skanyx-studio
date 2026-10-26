@@ -1,7 +1,20 @@
-node_modules
-dist
-.DS_Store
+node_modules/
 .env
-
-# Ignore the output video from Git but not videos you import into src/.
-out
+.env.*
+!.env.example
+out/
+media
+media/
+.remotion/
+*.log
+.DS_Store
+# Build and cache output
+dist/
+.cache/
+node_modules/.cache/
+# Generated per-project artefacts live under MEDIA_ROOT, never here
+projects/*/renders/
+projects/*/vo/
+projects/*/qa/
+# Scratch
+scratchpad/

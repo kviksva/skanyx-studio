@@ -1,0 +1,29 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls:*)", "Bash(grep:*)", "Bash(rg:*)", "Bash(cat:*)", "Bash(wc:*)",
+      "Bash(git status:*)", "Bash(git diff:*)", "Bash(git log:*)", "Bash(git show:*)",
+      "Bash(npm run lint)", "Bash(npm run typecheck)", "Bash(npm run test)", "Bash(npm run check)",
+      "Bash(npm run facts:*)", "Bash(npm run media:manifest:*)", "Bash(npm run qa:*)",
+      "Bash(ffprobe:*)", "Bash(python3 -c:*)"
+    ],
+    "deny": ["Bash(git push:*)"]
+  },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write|MultiEdit",
+        "hooks": [
+          { "type": "command", "command": "python3 \"$CLAUDE_PROJECT_DIR/scripts/hooks/code-gate.py\"", "timeout": 90, "statusMessage": "code-gate" }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          { "type": "command", "command": "python3 \"$CLAUDE_PROJECT_DIR/scripts/hooks/finish-gate.py\"", "timeout": 300, "statusMessage": "finish-gate" }
+        ]
+      }
+    ]
+  }
+}

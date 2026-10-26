@@ -1,0 +1,13 @@
+{
+  "durationMs": 30000,
+  "vo": [
+    { "file": "l1.take1.wav", "atMs": 400 },
+    { "file": "l2.take1.wav", "atMs": 4200 },
+    { "file": "l3.take1.wav", "atMs": 9800 },
+    { "file": "l4.take1.wav", "atMs": 15200 },
+    { "file": "l5.take1.wav", "atMs": 19000 },
+    { "file": "l6.take1.wav", "atMs": 26000 }
+  ],
+  "music": null,
+  "sfx": []
+}
