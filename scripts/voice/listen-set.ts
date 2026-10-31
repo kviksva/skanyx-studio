@@ -24,9 +24,9 @@ const OVERUSED = new Set(["Brian", "Liam", "Adam", "Jessica", "Matilda", "Sarah"
 /** One test script: hook, verdict, cost, CTA. The spoken forms are final. */
 export const testScript = [
   "[calm] That orange engine light just came on, and your first thought was the worst one.",
-  "Plug in a cheap adapter, open Skanyx, and thirty seconds later you have an answer.",
+  "Plug in a cheap adapter, open Skanyx, and read what the car is telling you.",
   "P zero four two zero. The catalytic converter is not cleaning the exhaust the way it should.",
-  "[reassuring] It is safe to keep driving for now. The fix is roughly three hundred to nine hundred euros at an independent workshop.",
+  "[reassuring] It is safe to keep driving for now. The fix is roughly three hundred to twelve hundred euros at an independent workshop.",
   "Skanyx is free on iOS and Android.",
 ];
 

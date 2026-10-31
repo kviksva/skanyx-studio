@@ -1,7 +1,11 @@
 {
   "slug": "_TEMPLATE",
   "locale": "en",
-  "voice": { "modelId": "eleven_v4", "stability": 0.45, "similarityBoost": 0.75 },
+  "voice": {
+    "modelId": "eleven_v4",
+    "stability": 0.45,
+    "similarityBoost": 0.75
+  },
   "lines": [
     {
       "id": "l1",
@@ -13,8 +17,8 @@
     {
       "id": "l2",
       "scene": "plug",
-      "display": "Plug in a €15 adapter, open Skanyx.",
-      "spoken": "Plug in a fifteen euro adapter, open Skanyx, and thirty seconds later you have an answer."
+      "display": "Plug in an OBD2 adapter, open Skanyx.",
+      "spoken": "Plug in an O B D two adapter, open Skanyx, and read what the car is telling you."
     },
     {
       "id": "l3",
@@ -32,8 +36,8 @@
     {
       "id": "l5",
       "scene": "cost",
-      "display": "Roughly €300 to €900 at an independent workshop.",
-      "spoken": "The fix is roughly three hundred to nine hundred euros at an independent workshop."
+      "display": "Roughly €<min> to €<max> at an independent workshop.",
+      "spoken": "The fix is roughly <min in words> to <max in words> euros at an independent workshop."
     },
     {
       "id": "l6",

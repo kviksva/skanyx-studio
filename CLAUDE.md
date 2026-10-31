@@ -8,6 +8,7 @@ Environment design and the research behind every choice: `docs/research/00-envir
 
 | Task | Read |
 |---|---|
+| **Every session, first** | `docs/status.md`: what is built, what blocks the first video, the idea bank, how to start. Update it before you finish if you changed anything on it. |
 | Any new video | `/video-brief` skill, then `/video-script`, then `/video-review` (`.claude/skills/`) |
 | Writing or motion rules | `docs/style-guide.md`; design questions go to the `apple-design` and `emil-design-eng` skills (symlinked from the web repo) |
 | Before publishing | `docs/checklist.md` (20 items), `docs/disclosure.md` (labels, badges, claims) |
@@ -60,7 +61,7 @@ npm run check            lint + typecheck + vitest (the Stop hook runs this; CI 
 npm run media:setup      create MEDIA_ROOT tree, link public/media
 npm run media:normalise  raw -> mezzanine (+ flash sync for recordings)
 npm run media:manifest   list | verify
-npm run facts            code <CODE> | prices <text> | capability <text> | positioning
+npm run facts            code <CODE> | prices <text> | capability <text> | positioning | stats [CODE]
 npm run voice:listen-set search | render <voice_id:owner_id>...   (blind narrator pick)
 npm run voice:dictionaries   create skanyx-en, print ids for .env
 npm run voice:tts        script.json [--takes N] [--force]   (spends credits)
@@ -88,7 +89,7 @@ scripts/          facts, media/{normalise,manifest}, voice/{elevenlabs,tts,dicti
 projects/         one folder per video: brief.md, script.json, timeline.json, review.md, publish.md (copy _TEMPLATE)
 public/fonts      Geist woff2; public/devices, public/badges: artwork a human downloads (README in each; QA warns on fallbacks)
 manifests/        media.jsonl (tracked index of the SSD)
-docs/             style-guide, checklist, disclosure, shooting-guide, voice-guide, research/
+docs/             status (read first), style-guide, checklist, disclosure, shooting-guide, voice-guide, research/
 ```
 
 ## Do not

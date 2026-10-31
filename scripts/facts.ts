@@ -8,6 +8,11 @@
  *   npm run facts -- prices "fuel pump"  # grep REPAIR_PRICES.md rows
  *   npm run facts -- capability "live data"  # grep CAPABILITY_GROUND_TRUTH.md
  *   npm run facts -- positioning       # print SKANYX_POSITIONING.md sections 1-3
+ *   npm run facts -- stats [CODE]      # app scan counts (data/dtc-stats.json); no CODE = top 20
+ *
+ * dtc-stats floors (the web repo applies them before printing a number): at
+ * least 15 cars per code, 4 per make, 10 for a km median. Never quote a count
+ * below a floor in a video.
  */
 import { existsSync, readFileSync } from "node:fs";
 import path from "node:path";
@@ -83,8 +88,24 @@ const main = () => {
       console.log(text.split("## 4.")[0]);
       return;
     }
+    case "stats": {
+      const s = JSON.parse(readFileSync(files.dtcStats, "utf8")) as {
+        generatedAt: string;
+        windowDays: number;
+        totalCars: number;
+        codes: Record<string, { cars: number; users: number; kmMedian?: number }>;
+      };
+      console.log(`data/dtc-stats.json generated ${s.generatedAt}, ${s.windowDays} days, ${s.totalCars} cars`);
+      if (arg) {
+        console.log(JSON.stringify(s.codes[arg.toUpperCase()] ?? "(below the floor or not seen)", null, 2));
+        return;
+      }
+      const top = Object.entries(s.codes).sort((a, b) => b[1].cars - a[1].cars).slice(0, 20);
+      for (const [code, v] of top) console.log(`${code.padEnd(7)} ${String(v.cars).padStart(4)} cars`);
+      return;
+    }
     default:
-      console.log("usage: npm run facts -- code <CODE> | prices <text> | capability <text> | positioning");
+      console.log("usage: npm run facts -- code <CODE> | prices <text> | capability <text> | positioning | stats [CODE]");
   }
 };
 
